@@ -1,0 +1,216 @@
+@import url("http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/**
+ * Common Styles and Additions
+ */
+* {
+  box-sizing: border-box;
+}
+
+input {
+  border: 0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  outline: none;
+  padding: 30px;
+}
+
+.title {
+  font-size: 20pt;
+  font-weight: 500;
+}
+
+/* Footer Style */
+html, body {
+  height: 100%;
+}
+
+.container {
+  clear: both;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom: -20px;
+}
+.container .footer-push {
+  height: 20px;
+}
+
+footer {
+  clear: both;
+  position: relative;
+  height: 20px;
+}
+
+/* Styling the links */
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+a.no-style {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: inherit;
+}
+a.no-style:active, a.no-style:focus {
+  outline: none;
+}
+
+/**
+ * Main Styles
+ */
+body {
+  font-family: 'Dosis', sans-serif;
+  color: #424a4a;
+  background: #f5f9fa;
+  font-size: 15pt;
+}
+
+nav {
+  font-size: 25pt;
+  background: #3498db;
+  height: 75px;
+  color: white;
+  display: table;
+  width: 100%;
+}
+nav .nav-left, nav .nav-right {
+  display: table-cell;
+  vertical-align: middle;
+}
+nav .nav-right {
+  text-align: right;
+  padding-right: 5vw;
+}
+nav .nav-left {
+  text-align: left;
+  padding-left: 5vw;
+}
+
+main {
+  width: 90vw;
+  margin: 0 auto;
+}
+main .search {
+  padding: 7.5vh 0;
+  text-align: center;
+}
+main .search ::-webkit-input-placeholder {
+  color: #727f80;
+}
+main .search :-moz-placeholder {
+  color: #727f80;
+}
+main .search ::-moz-placeholder {
+  color: #727f80;
+}
+main .search :-ms-input-placeholder {
+  color: #727f80;
+}
+main .search input {
+  font-size: 22.5pt;
+  font-family: inherit;
+  width: 75%;
+  height: 2.5vh;
+  text-align: center;
+  color: #727f80;
+}
+@media screen and (max-width: 750px) {
+  main .search input {
+    width: 95%;
+  }
+}
+main .results {
+  width: 75%;
+  margin: 0 auto;
+  display: none;
+}
+main .results .results-container {
+  padding: 2.5vh 0;
+}
+main .results .results-container .result {
+  font-family: arial;
+  font-weight: 200;
+  float: left;
+  padding: 15px;
+  margin-right: .75vw;
+  margin-bottom: 1.25vh;
+  color: white;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background: #75b9e7;
+  display: none;
+}
+@media screen and (max-width: 750px) {
+  main .results {
+    width: 95%;
+  }
+}
+
+footer {
+  text-align: center;
+  color: #b5bcbd;
+  font-size: 11pt;
+}
