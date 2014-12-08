@@ -1,2 +1,4 @@
 .sass-cache/
 DS_Store
+build/*
+api_key.txt

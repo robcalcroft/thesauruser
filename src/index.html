@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name='description' content='Quickly find words that make you sound clever'>
+	<link rel="stylesheet" href="css/thesauruser.min.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/sweetalert/0.3.2/sweet-alert.min.css">
+	<title>thesauruser</title>
+</head>
+<body>
+	<div class="container">
+		<nav>
+			<div class="nav-left">thesauruser</div>
+			<div class="nav-right"><a class='no-style' target='_blank' href='https://github.com/robcalcroft/thesauruser'><i class="fa fa-github"></i></a></div>
+		</nav>
+		<main>
+			<div class="search">
+				<input id='main-search' type="text" placeholder='Search for a word' autofocus>
+			</div>
+			<div class="results">
+				<div class="title">Synonyms</div>
+				<div class="results-container"></div>
+			</div>
+		</main>
+		<div class="footer-push"></div>
+	</div>
+	<footer>an experiment by <a href='http://twitter.com/robcalcroft' target='_blank'>@robcalcroft</a></footer>
+</body>
+	<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/sweetalert/0.3.2/sweet-alert.min.js"></script>
+	<script src="js/thesauruser-all.js"></script>
+	<script>thesauruser.init()</script>
+</html>

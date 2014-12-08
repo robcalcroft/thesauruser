@@ -1,0 +1,132 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/typography";
+@import "compass/layout/sticky-footer";
+
+@import url("http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800");
+
+// Vars
+$main-colour: #3498db;
+$main-colour-light: lighten($main-colour, 15%);
+$main-text: darken(#7f8c8d, 25%);
+$input-text: lighten($main-text, 20%);
+
+/**
+ * Common Styles and Additions
+ */
+
+* {
+	box-sizing: border-box;
+}
+
+input {
+	border: 0;
+	@include border-radius();
+	outline: none;
+	padding: 30px;
+}
+
+.title {
+	font-size: 20pt;
+	font-weight: 500;
+}
+
+/* Footer Style */
+@include sticky-footer(20px, ".container", ".footer-push", "footer");
+
+/* Styling the links */
+a {
+	color: $main-colour;
+	text-decoration: none;
+}
+a.no-style {
+	@include unstyled-link();
+}
+
+/**
+ * Main Styles
+ */
+body {
+	font-family: 'Dosis', sans-serif;
+	color: $main-text;
+	background: #f5f9fa;
+	font-size: 15pt;
+}
+
+nav {
+	$side-padding: 5vw;
+	font-size: 25pt;
+	background: $main-colour;
+	height: 75px;
+	color: white;
+	display: table;
+	width: 100%;
+	.nav-left, .nav-right {
+		display: table-cell;
+		vertical-align: middle;
+	}
+	.nav-right { 
+		text-align: right;
+		padding-right: $side-padding;
+	}
+	.nav-left {
+		text-align: left;
+		padding-left: $side-padding;
+	}
+}
+
+main {
+	width: 90vw;
+	margin: 0 auto;
+	.search {
+		padding: 7.5vh 0;
+		text-align: center;
+		::-webkit-input-placeholder { color: $input-text;}
+		:-moz-placeholder {color: $input-text;}
+		::-moz-placeholder { color: $input-text;}
+		:-ms-input-placeholder { color: $input-text;}
+		input {
+			font-size: 22.5pt;
+			font-family: inherit;
+			width: 75%;
+			height: 2.5vh;
+			text-align: center;
+			color: $input-text;
+			@media screen and (max-width: 750px) {
+				width: 95%;
+			}
+		}
+	}
+	.results {
+		width: 75%;
+		margin: 0 auto;
+		display: none;
+		.results-container {
+			padding: 2.5vh 0;
+			.result {
+				font-family: arial;
+				font-weight: 200;
+				float: left;
+				padding: 15px;
+				margin-right: .75vw;
+				margin-bottom: 1.25vh;
+				color: white;
+				@include border-radius();
+				background: $main-colour-light;
+				display: none;
+			}
+		}
+		@media screen and (max-width: 750px) {
+			width: 95%;
+		}
+	}
+}
+
+footer {
+	text-align: center;
+	color: lighten($main-text, 45%);
+	font-size: 11pt;
+}
+
+
+
