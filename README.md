@@ -5,4 +5,4 @@ thesauruser
 
 Quickly find words that make you sound clever ;¬)
 
-Visit [here](calcroft.co/thesauruser)
+Visit [here](https://calcroft.co/thesauruser)
