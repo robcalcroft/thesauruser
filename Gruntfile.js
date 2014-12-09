@@ -90,7 +90,7 @@ module.exports = function(grunt) {
         options: {
           process: function(content) {
             // Add build headers here
-            return content.replace('YRM2015-all.js', 'YRM2015-all.min.js');
+            return content.replace('thesauruser-all.js', 'thesauruser-all.min.js');
           }
         }
       },
