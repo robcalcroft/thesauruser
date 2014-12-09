@@ -49,7 +49,14 @@ thesauruser = {
 
 		// If it fails show an error
 		.fail(function(err) {
-			swal("Oops", err.responseJSON.message, "error")
+			if(err && err.responseJSON) {
+				swal("Oops", err.responseJSON.message, "error")
+			} else {
+				swal("Oops", "Looks like we've run into an error. Sorry! " +
+				     "If you think the app is broken, please report it on Github",
+				     "error"
+				)
+			}
 		})
 	},
 
