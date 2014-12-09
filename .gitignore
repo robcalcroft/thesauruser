@@ -1,5 +1,10 @@
 .sass-cache/
 node_modules/
-DS_Store
 build/*
+
+DS_Store
+
 api_key.txt
+
+src/js/*-all.*
+src/css/*.min.css
