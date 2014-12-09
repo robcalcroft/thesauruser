@@ -18,6 +18,9 @@ app.get('/api/thesaurus/:word', function(req, res, next) {
 
 	if(req.xhr) {
 
+		// Remove new line chars
+		apiKey = apiKey.replace(/(\r\n|\n|\r)/gm,"");
+
 		url = "http://words.bighugelabs.com/api/2/"+ apiKey +"/"+ word +"/json";
 		request(url, function(error, response, body) {
 			if(!error && response.statusCode === 200) {
