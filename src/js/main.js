@@ -14,6 +14,9 @@ thesauruser = {
 		// the tasks/watchers
 		$(document).ready($.proxy(function() {
 
+			// Init the router
+			this.router.init({scope: this});			
+
 			// Watch the main input for changes
 			$('#main-search').change($.proxy(function(e) {
 				var word = $(e.currentTarget).val();
@@ -113,6 +116,17 @@ thesauruser = {
 				$($results[j]).delay(speed*j).fadeIn();
 			};
 		})
+	},
 
+	router: {
+
+		init: function(packet) {
+			var word = window.location.hash.split('#')[1];
+
+			if(word) {
+				$('#main-search').val(word)
+				packet.scope.getSynonyms(word, packet.scope.renderSynonyms);
+			}
+		}		
 	}
 }
