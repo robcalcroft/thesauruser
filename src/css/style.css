@@ -214,3 +214,10 @@ footer {
   color: #b5bcbd;
   font-size: 11pt;
 }
+
+/*
+	Hack SWAL
+ */
+.sweet-overlay {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}

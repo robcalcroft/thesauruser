@@ -48,6 +48,8 @@ thesauruser = {
 
 		// Call the API to grab the synonyms
 		// from the backend
+		$('.container').mask();
+
 		$.getJSON('/api/thesaurus/' + word, callback)
 
 		// If it fails show an error
@@ -60,6 +62,9 @@ thesauruser = {
 				     "error"
 				)
 			}
+		})
+		.complete(function() {
+			$('.container').unmask();
 		})
 	},
 
