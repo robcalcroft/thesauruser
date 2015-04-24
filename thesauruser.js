@@ -24,24 +24,39 @@ app.get('/api/thesaurus/:word', function(req, res, next) {
 		url = "http://words.bighugelabs.com/api/2/"+ apiKey +"/"+ word +"/json";
 		request(url, function(error, response, body) {
 			if(!error && response.statusCode === 200) {
-				var words,
-					obj = JSON.parse(body);
+				var words = [],
+					obj = JSON.parse(body),
+					pushItem;
 
-				if(obj.noun) {
-					words = obj.noun.syn;
-				} else if(obj.adjective) {
-					words = obj.adjective.syn;
-				} else if(obj.verb) {
-					words = obj.verb.syn;
+				pushItem = function(arr, to) {
+					var len = arr.length;
+					while(len--) {
+						to.push(arr[len]);
+					}
+					return to;
+				}
+
+				if(obj.noun || obj.verb || obj.adjective) {
+					if(obj.noun) {
+						words = pushItem(obj.noun.syn || [], words);
+						words = pushItem(obj.noun.sim || [], words);
+					}
+					if(obj.verb) {
+						words = pushItem(obj.verb.syn || [], words);
+						words = pushItem(obj.verb.sim || [], words);
+					}
+					if(obj.adjective) {
+						words = pushItem(obj.adjective.syn || [], words);
+						words = pushItem(obj.adjective.sim || [], words);
+					}
 				} else {
-					res.status(500).json({
+					return res.status(500).json({
 						status: 500,
 						message: "There's been an issue with the API,"+
 						" please contact me on GitHub using the "+
 						"button at the top, and report the "+
 						"word you entered, thanks!"
-					})
-					return;
+					});
 				}
 
 				res.status(200).json({
@@ -79,7 +94,7 @@ app.get('/api/*', function(req, res, next) {
 })
 
 app.get('*', function(req, res, next) {
-	res.status(404).send('404 Bitch')
+	res.status(404).send('404 - Not found')
 })
 
 app.listen(8001);
