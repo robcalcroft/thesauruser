@@ -51,7 +51,7 @@ a img {
   border: none;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
@@ -64,10 +64,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 input {
   border: 0;
-  -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
+  -webkit-border-radius: 5px;
   border-radius: 5px;
   outline: none;
   padding: 30px;
@@ -195,10 +193,8 @@ main .results .results-container .result {
   margin-right: .75vw;
   margin-bottom: 1.25vh;
   color: white;
-  -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
+  -webkit-border-radius: 5px;
   border-radius: 5px;
   background: #75b9e7;
   display: none;
