@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    
+
     watch: {
       files: ['src/**/*.scss', 'src/**/*.js', 'src/**/*.html', 'src/**/*.css'],
       tasks: ['debug'],
@@ -59,32 +59,32 @@ module.exports = function(grunt) {
     // Copy
     copy: {
       assets: {
-        expand: true, 
-        src: ['assets/**'], 
+        expand: true,
+        src: ['assets/**'],
         dest: 'build/',
         cwd: 'src/'
       },
       css: {
-        expand: true, 
-        src: ['css/<%= pkg.name %>.min.css'], 
+        expand: true,
+        src: ['css/<%= pkg.name %>.min.css', 'css/jquery.loadmask-plus.min.css'],
         dest: 'build/',
         cwd: 'src/'
       },
       js: {
-        expand: true, 
-        src: ['js/<%= pkg.name %>-all.min.js'], 
+        expand: true,
+        src: ['js/<%= pkg.name %>-all.min.js', 'js/jquery.loadmask-plus.min.js'], 
         dest: 'build/',
         cwd: 'src/'
       },
       js_debug: {
-        expand: true, 
-        src: ['js/<%= pkg.name %>-all.js'], 
+        expand: true,
+        src: ['js/<%= pkg.name %>-all.js'],
         dest: 'build/',
         cwd: 'src/'
       },
       html: {
-        expand: true, 
-        src: ['**/*.html'], 
+        expand: true,
+        src: ['**/*.html'],
         dest: 'build/',
         cwd: 'src/',
         options: {
@@ -95,8 +95,8 @@ module.exports = function(grunt) {
         }
       },
       html_debug: {
-        expand: true, 
-        src: ['**/*.html'], 
+        expand: true,
+        src: ['**/*.html'],
         dest: 'build/',
         cwd: 'src/'
       }
